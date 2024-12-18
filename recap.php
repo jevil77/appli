@@ -1,7 +1,7 @@
 <?php
   
      session_start();
-
+    // démarrage session
 ?>
 
 <!DOCTYPE html>
@@ -50,7 +50,7 @@ tr {
     </ul>
 </nav>
 
-
+ <!-- permet de naviguer entre les deux pages --> 
 
 
        
@@ -98,6 +98,10 @@ tr {
                   "</tr>";
 
 
+
+        //Construction d'un tableau associatif pour chaque produit
+
+
                   
                  
             
@@ -124,7 +128,7 @@ tr {
     
     }
 
-    // si j'ai des produits en session alors 
+    // si j'ai des produits en session alors echo "Nb de produits dans la session"
 
     if(isset ($_SESSION['products']) ) {
 

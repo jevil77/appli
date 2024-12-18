@@ -58,6 +58,8 @@
         $price = filter_input(INPUT_POST,"price", FILTER_VALIDATE_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
         $qtt = filter_input(INPUT_POST,"qtt", FILTER_VALIDATE_INT);
 
+        
+
         // filtre les valeurs transmises
 
         if($name && $price && $qtt){     // valeurs nettoyés
@@ -99,9 +101,11 @@
                            
         unset($_SESSION['products']);
         
-        // header("Location:recap.php");
+         header("Location:recap.php");
 
-        // $_SESSION['alert'] = "<div><p>La session a été vidé</p><</div>";
+         $_SESSION['alert'] = "<div><p>La session a été vidé</p><</div>";
+
+        //fonction "effacer", efface les produits en session
     
         break;
         
@@ -128,6 +132,18 @@
 
     case 'moinsQtt' :     
         if(isset($_GET['id']) && isset($_SESSION['products'][$_GET['id']])) {
+            if($_SESSION['products'][$index]['qtt'] >1 && isset($_GET["id"])){
+                $index = $_GET["id"];
+                               
+                 unset($_SESSION['products'][$index]);
+               
+                 header("Location:recap.php");
+    
+                $_SESSION["alert"] = "<p>Produit supprimé</p>";
+
+            }
+           
+             
         $_SESSION['products'][$_GET['id']]['qtt']--; 
         $_SESSION['products'][$_GET['id']]['total']=
          $_SESSION['products'][$_GET['id']]['qtt']*$_SESSION['products'][$_GET['id']]['price']; 
@@ -136,9 +152,13 @@
             
             }
 
-            ; 
             header("Location:recap.php");
-        
+
+
+
+           
+           
+            break;
         
         
         }
@@ -154,3 +174,8 @@
 ?>
 
 
+             
+
+    
+           
+           

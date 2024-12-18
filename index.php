@@ -51,10 +51,12 @@ input[type="number"] {
     </style>
 
 
+
 <nav>
     <ul>
-        <li><a href="index.php">Ajout produit</a></li>
-        <li><a href="recap.php">Recap</a></li>
+        <ol><a href="index.php"><button name="button">Ajouter produit</button></a></ol>
+        <br>
+        <ol><a href="recap.php"><button name="button">Afficher recap</button></a></ol>
         
     </ul>
 </nav>
@@ -108,13 +110,13 @@ if (isset($_SESSION['alert'])) {
         <p>
             <label>
                 Prix du produit :
-                <input type="number" step="any" name="price">
+                <input type="number" min = 1 step="any" name="price">
             </label>
         </p>
         <p>
             <label>
                 Quantité désirée : 
-                <input type="number" name="qtt" value="1">
+                <input type="number" min= 1 name="qtt" value="1">
                 
             </label>
         </p>
@@ -124,8 +126,7 @@ if (isset($_SESSION['alert'])) {
     
       </form>
 
-
-
+        
       <!--php var_dump($SESSIONS); ?>--> 
 
        <!-- affiche les valeurs saisis dans "Ajouter un produit" -->
