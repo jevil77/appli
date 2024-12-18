@@ -189,9 +189,9 @@ tr {
 
    
 
-    // affiche les produits de la session
+    
 
-    // définir ce qu'est une session et une superglobale, un tableau associatif, pourquoi en méthode post qu'en méthode get
+   
     ?>
 
 
