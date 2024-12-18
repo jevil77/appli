@@ -1,29 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-      <style>
-        .alert {
-           padding: 20px;
-           background-color: #f44336; 
-           color: white;
-           margin-bottom: 15px;
-           border-radius: 5px;
-           position: relative;
-        }
-
-
-
-
-      </style>
-    
-</body>
-</html>
-
 
 
 
@@ -103,7 +77,7 @@
         
          header("Location:recap.php");
 
-         $_SESSION['alert'] = "<div><p>La session a été vidé</p><</div>";
+         $_SESSION['alert'] = "<div><p>La session a été vidé</p></div>";
 
         //fonction "effacer", efface les produits en session
     

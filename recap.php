@@ -9,52 +9,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Récapitulatif des produits</title>
 </head>
 <body>
-    <style>
+  
 
-table {
-  border: 1px;
-  width: 100%;
-}
-
-th, td {
-  border: 1px solid #cacfd2;
-  padding: 8px;
-  text-align: center;
-}
-
-th {
-  background-color: #aeb6bf;
-}
-
-tr {
-  background-color: #f2f2f2;
-}
+ 
+ 
 
 
 
 
 
 
-    </style>
 
 
 
-<nav>
-    <ul>
-        <li><a href="index.php">Ajout produit</a></li>
-        <li><a href="recap.php">Recap</a></li>
-        
-    </ul>
-</nav>
-
- <!-- permet de naviguer entre les deux pages --> 
 
 
-       
-<a href="traitement.php?action=clear">vider le panier</a> 
+
+   
+
+
 
       <!-- la page recap permet d'afficher de manère organisée et exhaustive la liste des produits présents en session + total -->
 
@@ -154,6 +131,36 @@ tr {
     }
 
 
+    ?>
+
+<div class="align">    
+  <div>
+   <nav>
+      <ul>
+        <ol><a href="index.php"><button  class="btn" name="button">Ajouter produit</button></a></ol>
+        <br>
+        <ol><a href="recap.php"><button class="btn" name="button">Afficher recap</button></a></ol>
+        <br>
+        <ol><a href="traitement.php?action=clear"><button  class="btn" name="button"> Vider le panier</button></a></ol>
+
+        
+      </ul>
+  </nav>
+  </div>
+  <div class="image">
+    <img src="https://www.macary.fr/wp-content/uploads/2021/10/Epicerie-Fine-Bio-04.jpg" alt="">
+    </div>
+
+</div>
+
+
+
+
+
+
+<!-- permet de naviguer entre les deux pages --> 
+
+    
 
 
 
