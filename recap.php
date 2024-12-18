@@ -12,6 +12,50 @@
     <title>Récapitulatif des produits</title>
 </head>
 <body>
+    <style>
+
+table {
+  border: 1px;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid #cacfd2;
+  padding: 8px;
+  text-align: center;
+}
+
+th {
+  background-color: #aeb6bf;
+}
+
+tr {
+  background-color: #f2f2f2;
+}
+
+
+
+
+
+
+    </style>
+
+
+
+<nav>
+    <ul>
+        <li><a href="index.php">Ajout produit</a></li>
+        <li><a href="recap.php">Recap</a></li>
+        
+    </ul>
+</nav>
+
+
+
+
+       
+<a href="traitement.php?action=clear">vider le panier</a> 
+
       <!-- la page recap permet d'afficher de manère organisée et exhaustive la liste des produits présents en session + total -->
 
 <?php 
@@ -47,9 +91,16 @@
                     "<td>".$index."</td>",
                     "<td>".$product['name']."</td>", 
                     "<td>".number_format($product['price'],2,",","&nbsp;")."&nbsp;€</td>",
-                    "<td>".$product['qtt']."</td>", 
+                    "<td >".$product['qtt']. "",
+                     "<a href=traitement.php?action=plusQtt&id=$index> + </a><a href=traitement.php?action=moinsQtt&id=$index> - </a></td>",
+                    
                     "<td>".number_format($product['total'],2,",","&nbsp;")."&nbsp;€</td>",
                   "</tr>";
+
+
+                  
+                 
+            
 
 
                   $totalGeneral += $product ['total'];
@@ -64,19 +115,86 @@
                "</tbody>",
             "</table>";
 
+
+
+
                  
         // calcul et affichage du total général
 
     
     }
 
+    // si j'ai des produits en session alors 
 
-    var_dump($_SESSION['products']);  
+    if(isset ($_SESSION['products']) ) {
+
+        $countProducts = count($_SESSION['products']);
+
+         echo "Nombre de produits dans la session : $countProducts";
+
+
+    }
+
+    
+
+    
+
+   
+
+
+
+    
+    if (isset($_SESSION['alert'])) {
+     echo     $_SESSION['alert'];
+    
+    }
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    
+
+
+
+    
+
+
+   
+    
+
+
+   
 
     // affiche les produits de la session
 
-
+    // définir ce qu'est une session et une superglobale, un tableau associatif, pourquoi en méthode post qu'en méthode get
     ?>
+
+
 
 
     

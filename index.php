@@ -3,16 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.CSS">
     <title>Ajout produit</title>
 </head>
 <body>
+    <style>
+
+form {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+}
+
+label {
+  
+      margin-bottom: 10px;
+  
+}
+
+input[type="text"],
+input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+}
+
+ input[type="submit"] {
+     background-color: #8c8179;
+     color: #5d6d7e
+     border: none;
+     padding: 10px 20px;
+     border-radius: 3px;
+  
+}
+
+  input[type="submit"]:hover {
+        background-color:#7e7168 ;
+  }
+
+
+
+
+
+    </style>
+
+
+<nav>
+    <ul>
+        <li><a href="index.php">Ajout produit</a></li>
+        <li><a href="recap.php">Recap</a></li>
+        
+    </ul>
+</nav>
+
+
+
 
        <!-- La page index contient le formulaire qui nous permettra de renseigner les produits à l'application -->
 <?php
 session_start();
 ?>
+
+<?php
+
+
+
+
+if(isset ($_SESSION['products']) ) {
+
+    $countProducts = count($_SESSION['products']);
+
+     echo "Nombre de produits dans la session : $countProducts";
+
+
+}
+
+
+
+
+//echo $_SESSION['alert'];
+
+
+if (isset($_SESSION['alert'])) {
+    echo  $_SESSION['alert'] ;
+    
+    unset($_SESSION['alert']);
+}
+
+
+
+?>
+ 
     <h1>Ajouter un produit</h1>
-      <form action="traitement.php" method="post">
+      <form action="traitement.php?action=add" method="post">
         <p>
             <label>
                 Nom du produit : 
@@ -29,6 +115,7 @@ session_start();
             <label>
                 Quantité désirée : 
                 <input type="number" name="qtt" value="1">
+                
             </label>
         </p>
         <p>
@@ -43,7 +130,7 @@ session_start();
 
        <!-- affiche les valeurs saisis dans "Ajouter un produit" -->
 
-
+       
 
 
     
